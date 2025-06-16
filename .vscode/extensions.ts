@@ -208,3 +208,4 @@ export function activate(context: vscode.ExtensionContext) {
         hoverProvider,
         statusBarItem
     );
+}
