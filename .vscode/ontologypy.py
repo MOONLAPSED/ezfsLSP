@@ -1,7 +1,7 @@
 from __future__ import annotations
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# LICENSE © 2025: CC BY 4.0: MOONLAPSED:https://github.com/Moonlapsed/Morphological
+# LICENSE © 2025: CC BY 4.0: MOONLAPSED:https://github.com/Moonlapsed/ezfsLSP
 import hashlib
 import math
 import hashlib

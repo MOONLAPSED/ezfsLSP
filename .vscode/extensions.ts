@@ -208,25 +208,3 @@ export function activate(context: vscode.ExtensionContext) {
         hoverProvider,
         statusBarItem
     );
-
-    // Register keybindings in package.json:
-    // "contributes": {
-    //   "keybindings": [
-    //     {
-    //       "command": "morphic.extractSection",
-    //       "key": "ctrl+shift+e",
-    //       "when": "editorTextFocus && editorLangId == markdown"
-    //     },
-    //     {
-    //       "command": "morphic.inlineSection", 
-    //       "key": "ctrl+shift+i",
-    //       "when": "editorTextFocus && editorLangId == markdown"
-    //     },
-    //     {
-    //       "command": "morphic.analyzeDocument",
-    //       "key": "ctrl+shift+m",
-    //       "when": "editorTextFocus && editorLangId == markdown"
-    //     }
-    //   ]
-    // }
-}

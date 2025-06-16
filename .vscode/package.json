@@ -50,6 +50,23 @@
         "title": "Analyze Document Structure",
         "category": "Morphic"
       }
+    ],
+    "keybindings": [
+      {
+        "command": "morphic.extractSection",
+        "key": "ctrl+shift+e",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "morphic.inlineSection", 
+        "key": "ctrl+shift+i",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "morphic.analyzeDocument",
+        "key": "ctrl+shift+m",
+        "when": "editorTextFocus && editorLangId == markdown"
+      }
     ]
   },
   "scripts": {
