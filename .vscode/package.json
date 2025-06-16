@@ -1,0 +1,68 @@
+{
+  "name": "morphic-markdown-agent",
+  "displayName": "Morphic Markdown Agent",
+  "description": "LSP integration for morphic markdown operations",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "markdown",
+        "extensions": [".md", ".markdown"],
+        "aliases": ["Markdown", "markdown"]
+      }
+    ],
+    "configuration": {
+      "title": "Morphic Markdown Agent",
+      "properties": {
+        "morphicMarkdown.pythonPath": {
+          "type": "string",
+          "default": "python3",
+          "description": "Path to Python executable"
+        },
+        "morphicMarkdown.agentPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to md_agent.py script"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "morphicMarkdown.extractSection",
+        "title": "Extract Section",
+        "category": "Morphic"
+      },
+      {
+        "command": "morphicMarkdown.inlineSection", 
+        "title": "Inline Section",
+        "category": "Morphic"
+      },
+      {
+        "command": "morphicMarkdown.analyzeDocument",
+        "title": "Analyze Document Structure",
+        "category": "Morphic"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^8.1.0"
+  }
+}
