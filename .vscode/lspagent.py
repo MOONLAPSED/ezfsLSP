@@ -1,4 +1,7 @@
+from __future__ import annotations
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# LICENSE © 2025: CC BY 4.0: MOONLAPSED:https://github.com/Moonlapsed/ezfsLSP
 """
 Morphic Markdown Agent - LSP Bridge
 Integrates morphic ontology with Language Server Protocol operations

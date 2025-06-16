@@ -14,7 +14,6 @@ import abc
 from abc import ABC, abstractmethod
 import random
 from dataclasses import dataclass, field
-
 class WordSize(enum.IntEnum):
     """Standardized computational word sizes"""
     BYTE = 1     # 8-bit
@@ -31,12 +30,12 @@ C_co = TypeVar('C_co', covariant=True)  # Control with covariance (Markovian)
 T_anti = TypeVar('T_anti', contravariant=True)  # Type with contravariance
 V_anti = TypeVar('V_anti', contravariant=True)  # Value with contravariance
 C_anti = TypeVar('C_anti', contravariant=True)  # Control with contravariance
-_C_ = TypeVar('Dunder_C', covariant=True)  # Morphic V-bit which replaes the MSB V bit if present
 # Forward references
-class _Atom_: pass
-class BYTE: pass
-class QuantumState: pass
-_B_ = TypeVar("B", bound=BYTE)
+class __atom__: pass  # protocall
+class _Atom: pass  # decorator
+class ByteWord: pass  # 'WordSize'-aware sliding cognitive register
+class BYTE: pass  # endo-functors, monads, sheafs, etc. Child of ByteWord
+class QuantumState: pass  # function, entanglement, statistical/thermodynamical character
 StateHash = Union[str, bytes, int, dict, Tuple, Hashable]
 # LRU cache with size limit to prevent memory issues
 _lsu_cache: Dict[Tuple[StateHash, int], Any] = {}  # type: ignore
@@ -147,12 +146,12 @@ class Category(Generic[T_co, V_co, C_co]):
         self.objects: List[T_co] = []
         self.morphisms: Dict[Tuple[T_co, T_co], List[C_co]] = {}
     
-    def add_object(self, obj: T_co) -> None:
+    def add_object(self, obj: T_co) -> None: # type: ignore
         """Add an object to the category."""
         if obj not in self.objects:
             self.objects.append(obj)
     
-    def add_morphism(self, source: T_co, target: T_co, morphism: C_co) -> None:
+    def add_morphism(self, source: T_co, target: T_co, morphism: C_co) -> None: # type: ignore
         """Add a morphism between objects."""
         if source not in self.objects:
             self.add_object(source)
@@ -164,14 +163,14 @@ class Category(Generic[T_co, V_co, C_co]):
             self.morphisms[key] = []
         self.morphisms[key].append(morphism)
     
-    def compose(self, f: C_co, g: C_co) -> C_co:
+    def compose(self, f: C_co, g: C_co) -> C_co: # type: ignore
         """
         Compose two morphisms (abstract method to be implemented).
         For morphisms f: A → B and g: B → C, returns g ∘ f: A → C
         """
         raise NotImplementedError("Composition must be implemented by subclasses")
     
-    def find_morphisms(self, source: T_co, target: T_co) -> List[C_co]:
+    def find_morphisms(self, source: T_co, target: T_co) -> List[C_co]: # type: ignore
         """Find all morphisms between two objects."""
         return self.morphisms.get((source, target), [])
 
