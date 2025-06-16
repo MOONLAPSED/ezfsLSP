@@ -1,8 +1,8 @@
 {
-  "name": "ezfsLSP",
+  "name": "ezfslsp",
   "displayName": "Morphic Markdown Agent",
   "description": "LSP integration for morphic markdown operations",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "engines": {
     "vscode": "^1.101.0"
   },
